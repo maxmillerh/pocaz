@@ -15,11 +15,11 @@ foto.onclick = function () {
     monschet = monschet + dobav;
     mon.innerHTML ='Денег: ' + monschet;
 
-    if(count <3 && lvl == 1){
+    if(count < 20 && lvl == 1){
         iz = 20;
         disp.innerHTML = 'Ударов ' + count + ' из ' + iz;
         lvl = arr[2];
-} else if(count ==3 && lvl == 2){
+} else if(count == 20 && lvl == 2){
         foto.src = 'img/dub.png';
         count = 0;
         iz = 50;
@@ -28,7 +28,7 @@ foto.onclick = function () {
         monschet = monschet + 50;
         mon.innerHTML ='Денег: ' + monschet;
         lvl = arr[3];
-} else if(count == 3 && lvl == 3){
+} else if(count == 50 && lvl == 3){
         foto.src = 'img/ananas.png';
         count = 0;
         iz = 100;
@@ -37,7 +37,7 @@ foto.onclick = function () {
         monschet = monschet + 100;
         mon.innerHTML ='Денег: ' + monschet;
         lvl = arr[4];
-} else if(count == 3 && lvl == 4){
+} else if(count == 100 && lvl == 4){
         foto.src = 'img/burat.png';
         count = 0;
         iz = 250;
@@ -46,7 +46,7 @@ foto.onclick = function () {
         monschet = monschet + 300;
         mon.innerHTML ='Денег: ' + monschet;
         lvl = arr[5];
-} else if(count == 3 && lvl == 5){
+} else if(count == 250 && lvl == 5){
         foto.src = 'img/boss.png';
         tebos.innerHTML = 'БОСС!!';
         count = 0;
@@ -56,7 +56,7 @@ foto.onclick = function () {
         monschet = monschet + 550;
         mon.innerHTML ='Денег: ' + monschet;
         lvl = arr[6];
-} else if(count == 3 && lvl == 6){
+} else if(count == 500 && lvl == 6){
         disp.innerHTML = 'Ударов ' + count + ' из ' + iz;
         monschet = monschet + 1200;
         mon.innerHTML ='Денег: ' + monschet;
