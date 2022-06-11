@@ -15,49 +15,10 @@
     <center><span id="displayText">Ударов 0 из 20</span></center>
     <img id="fotoGus" src="img/gus.png" alt="гусь">
     <center><span id="textBoss"> </span></center>
+    <center id="blockMoney"><span id="money">Денег: 0</span></center>
 </div>
 
 
-<script>
-    var iz = 20;
-    var lvl = 2;
-    var arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-    var count = 0;
-    var foto = document.getElementById("fotoGus");
-    var disp = document.getElementById("displayText");
-    var tebos = document.getElementById("textBoss");
-
-    foto.onclick = function () {
-        count++;
-        disp.innerHTML = 'Ударов ' + count + ' из ' + iz;
-
-        
-        if(count == 20 && lvl == 2){
-            foto.src = 'img/dub.png';
-            count = 0;
-            iz = 50;
-            lvl = arr[3];
-    } else if(count == 50 && lvl == 3){
-            foto.src = 'img/ananas.png';
-            count = 0;
-            iz = 100;
-            lvl = arr[4];
-    } else if(count == 100 && lvl == 4){
-            foto.src = 'img/burat.png';
-            count = 0;
-            iz = 250;
-            lvl = arr[5];
-    } else if(count == 250 && lvl == 5){
-            foto.src = 'img/boss.png';
-            tebos.innerHTML = 'БОСС!!';
-            count = 0;
-            iz = 500;
-            lvl = arr[6];
-    } else if(count == 500 && lvl == 6){
-        alert("ПОБЕДА!!!")
-
-    }
-    };
-</script>
+<script src="app.js"></script>
 </body>
 </html>
