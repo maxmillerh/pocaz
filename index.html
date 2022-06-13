@@ -15,11 +15,44 @@
     <a href="index.html"><img id="logo" src="img/logo.png" alt="Логотип"></a>
     <div id="moneyBlock" ><span id="money">Денег: 0</span></div>
     <img id="avtor" src="img/avtor.png" alt="Авторизация">
-    <img id="shop" src="img/shop.png" alt="Магази">
+    <div class="dropdown">
+        <img onclick="myFunction()" id="shop" src="img/shop.png" alt="Магази" class="dropbtn">
+        <div id="myDropdown" class="dropdown-content">
+            <div onclick="kulackFunction()" class="menu">
+                <img src="img/kulack.png" alt="Кулак">
+                <span class="nameMenu">Кулак</span> 
+                <p>Урон х1</p>
+            </div>
+            <hr>
+            <div onclick="bitaFunction()" class="menu" id="bitaMenu">
+                <img src="img/bita.png" alt="Бита">
+                <span class="nameMenu">Бита</span>
+                <p>Урон х2 </p> <span id="cenaBita" class="cenaMenu">Цена: 100</span>
+            </div>
+            <hr>
+            <div onclick="lomFunction()" class="menu">
+                <img src="img/lom.png" alt="">
+                <span class="nameMenu">Арматура</span>
+                <p>Урон х3 </p> <span id="cenaLom" class="cenaMenu">Цена: 300</span>
+            </div>
+            <hr>
+            <div onclick="nojFunction()" class="menu">
+                <img src="img/noj.png" alt="">
+                <span class="nameMenu">Нож</span>
+                <p>Урон х4 </p> <span id="cenaNoj" class="cenaMenu">Цена: 500</span>
+            </div>
+            <hr>
+            <div onclick="ganFunction()" class="menu">
+                <img src="img/gan.png" alt="">
+                <span class="nameMenu">Пистолет</span>
+                <p>Урон х5 </p> <span id="cenaGan" class="cenaMenu">Цена: 800</span>
+            </div>
+        </div>
+      </div>
 </header>
 
 <div id="wrapper">
-    <center><span id="displayText">Ударов 0 из 20</span></center>
+    <center><span id="displayText">Здоровье 50 из 50</span></center>
     <img id="fotoGus" src="img/gus.png" alt="гусь">
     <center><span id="textBoss"> </span></center>
 </div>
