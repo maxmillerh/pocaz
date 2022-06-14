@@ -1,12 +1,14 @@
 var iz = 50;
 var monschet = 0;
-var dobav = 1;
+var sec = 40;
 let bayBita = false;
 let bayLom = false;
 let bayNoj = false;
 let bayGan = false;
 let damage = 1;
+let ti;
 var lvl = 1;
+var ur = 1;
 var arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 var count = 50;
 var foto = document.getElementById("fotoGus");
@@ -14,6 +16,8 @@ var disp = document.getElementById("displayText");
 var tebos = document.getElementById("textBoss");
 var mon = document.getElementById("money");
 var sh = document.getElementById("shop");
+var ur = document.getElementById('urov')
+var time = document.getElementById('time')
 
 
 function kulackFunction() {
@@ -96,6 +100,31 @@ function ganFunction() {
                 }
         };
 
+function timer(){
+       
+        sec--;       
+        if(sec >= 10){
+                time.innerHTML = '00:' + sec;
+        }
+        else if(sec < 10 && sec !=0){
+                time.innerHTML = '00:0' + sec;
+        }
+        else{
+                alert('Поражение:(');
+               // location.reload(); 
+                foto.src = 'img/gus.png';
+                ur.innerHTML = 'Уровень 1: Злой гусь';
+                lvl = 1;
+                count = 50;
+                iz = 50;
+                disp.innerHTML = 'Здоровье ' + count + ' из ' + iz;
+                lvl = arr[2];
+                tebos.innerHTML = ' ';
+                time.innerHTML = ' ';
+                clearInterval(ti);
+
+        }
+        }
 
 foto.onclick = function () {
     count = count - damage;
@@ -106,6 +135,7 @@ foto.onclick = function () {
 
     if(count > 0 && lvl == 1){
         iz = 50;
+        ur.innerHTML = 'Уровень 1: Злой гусь'
         disp.innerHTML = 'Здоровье ' + count + ' из ' + iz;
         lvl = arr[2];
 } else if(count <= 0 && lvl == 2){
@@ -115,6 +145,7 @@ foto.onclick = function () {
         disp.innerHTML = 'Здоровье ' + count + ' из ' + iz;
         monschet = monschet + 30;
         mon.innerHTML ='Денег: ' + monschet;
+        ur.innerHTML = 'Уровень 2: Кефирный дуб';
         lvl = arr[3];
 } else if(count <= 0 && lvl == 3){
         foto.src = 'img/ananas.png';
@@ -123,6 +154,7 @@ foto.onclick = function () {
         disp.innerHTML = 'Здоровье ' + count + ' из ' + iz;
         monschet = monschet + 72;
         mon.innerHTML ='Денег: ' + monschet;
+        ur.innerHTML = 'Уровень 3: Вредный ананас';
         lvl = arr[4];
 } else if(count <= 0 && lvl == 4){
         foto.src = 'img/burat.png';
@@ -131,23 +163,39 @@ foto.onclick = function () {
         disp.innerHTML = 'Здоровье ' + count + ' из ' + iz;
         monschet = monschet + 126;
         mon.innerHTML ='Денег: ' + monschet;
+        ur.innerHTML = 'Уровень 4: Похотливый бурят';
         lvl = arr[5];
 } else if(count <= 0 && lvl == 5){
-        foto.src = 'img/boss.png';
+        foto.src = 'img/boss2.png';
         tebos.innerHTML = 'БОСС!!';
+        sec = 40;
+        ti = setInterval("timer()", 1000);
+       
         count = 1000;
         iz = 1000;
         disp.innerHTML = 'Здоровье ' + count + ' из ' + iz;;
         monschet = monschet + 192;
         mon.innerHTML ='Денег: ' + monschet;
+        ur.innerHTML = 'Голодный таракан';
         lvl = arr[6];
 } else if(count <= 0 && lvl == 6){
-        disp.innerHTML = 'Здоровье 0 из 500';
+        alert("ПОБЕДА!!!");
+        disp.innerHTML = 'Здоровье 0 из 1000';
+        ur.innerHTML = 'Босс: Голодный таракан';
         monschet = monschet + 600;
         mon.innerHTML ='Денег: ' + monschet;
-        alert("ПОБЕДА!!!")
-
-};
+        clearInterval(ti);
+        time.innerHTML = ' ';
+        tebos.innerHTML = ' ';
+        lvl = arr[7];
+} else if(count <= 0 && lvl == 7){
+        alert("ПОБЕДА!!!");
+        disp.innerHTML = 'Здоровье 0 из 1000';
+        ur.innerHTML = 'Босс: Голодный таракан';
+        /*clearInterval(ti);
+        time.innerHTML = ' ';
+        tebos.innerHTML = ' '; */
+}
 }
 
 function myFunction() {
@@ -167,6 +215,9 @@ function myFunction() {
 }
 }
 };
+
+
+
 
 
 
